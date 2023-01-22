@@ -12,6 +12,7 @@
       </v-avatar>
 
       <v-spacer> </v-spacer>
+      <v-icon>mdi-bell</v-icon>
     </v-app-bar>
 
     <v-main>
