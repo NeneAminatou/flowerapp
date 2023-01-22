@@ -2,19 +2,9 @@
 <template>
   <v-app>
     <!-- Entete de l'application -->
-    <v-app-bar app color="secondary" dark>
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+    <nav-bar></nav-bar>
 
 
-      <v-spacer></v-spacer>
-
-      <v-avatar>
-        <img src="@/assets/logo.png" alt="logo">
-      </v-avatar>
-
-      <v-spacer> </v-spacer>
-      <v-icon>mdi-bell</v-icon>
-    </v-app-bar>
     <!-- Fin de l'entete de l'application-->
 
     <!-- corps de la pagede l'application-->
@@ -32,8 +22,9 @@
 
 <script>
 import MybottomNavigation from './components/MybottomNavigation.vue';
+import NavBar from './components/NavBar.vue';
 export default {
-  components: { MybottomNavigation },
+  components: { MybottomNavigation, NavBar },
 
 
   data: () => ({
