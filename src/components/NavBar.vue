@@ -7,7 +7,7 @@
       </v-row>
     </v-navigation-drawer> -->
     <v-navigation-drawer v-model="drawer"  absolute
-      temporary mini-variant mini-variant-width="56">
+      temporary>
       <v-list-item class="px-2">
         <v-list-item-avatar>
        <v-icon @click="drawer=!drawer">mdi-menu</v-icon>
@@ -53,7 +53,7 @@ export default {
       drawer:false,
       items: [
         { title: 'Photos', icon: 'mdi-folder-multiple-image' },
-        { title: 'About', icon: 'mdi-message-text' },
+        { title: 'Messagerie', icon: 'mdi-message-text' },
       ],
       links: ['Home', 'Contacts', 'Settings'],
       mini: true,
