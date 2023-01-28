@@ -4,10 +4,10 @@
     <v-container>
       <v-row>
         <v-col>
-          <v-card max-height="200">
+          <v-card max-height="300">
             <v-btn @click="generate">Generate ramdom flower position</v-btn>
 
-            <GmapMap style=" height: 200px;" :zoom="15" :center="center" ref="map">
+            <GmapMap style=" height: 300px;" :zoom="15" :center="center" ref="map">
               <GmapMarker v-for="(marker, index) in markers" :key="index" :position="marker.latLng" />
             </GmapMap>
           </v-card>
@@ -27,7 +27,7 @@ export default {
     center: {
       type: Object,
       default: () => {
-        return { lat: 48.7587344, lng: 2.0488569 }
+        return { lat: 48.7799511, lng: 2.2061946 }
       }
     }
   },

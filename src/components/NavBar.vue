@@ -42,7 +42,7 @@
       </template>
     </v-navigation-drawer>
     <!--Entete de la page Barre verte-->
-    <v-app-bar app color="secondary" dark>
+    <v-app-bar app color="secondary" hide-on-scroll dark>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
 
