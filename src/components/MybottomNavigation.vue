@@ -6,28 +6,36 @@
       </v-card-text>
 
     </div> -->
-    <v-speed-dial class="mb-15" v-model="fab" :top="top" :bottom="bottom" :right="right" :left="left" :direction="direction"
-          :open-on-hover="hover" :transition="transition">
-          <template v-slot:activator>
-            <v-btn v-model="fab" color="secondary" dark fab>
-              <v-icon v-if="fab">
-                mdi-close
-              </v-icon>
-              <v-icon v-else>
-                mdi-plus
-              </v-icon>
-            </v-btn>
-          </template>
+    <v-footer app>
+      <v-speed-dial
+    v-model="fab"
+
+
+      :top="top" :bottom="bottom" :right="right" :left="left" :direction="direction"
+      :open-on-hover="hover" :transition="transition">
+      <template v-slot:activator>
+        <v-btn v-model="fab" color="secondary" dark fab>
+          <v-icon v-if="fab">
+            mdi-close
+          </v-icon>
+          <v-icon v-else>
+            mdi-plus
+          </v-icon>
+        </v-btn>
+      </template>
 
 
 
 
-          <v-btn fab dark small color="primary" >
-            <v-icon color="grey">mdi-head-cog-outline</v-icon>
-          </v-btn>
-        </v-speed-dial>
+      <v-btn fab dark small color="primary" >
+        <v-icon color="grey">mdi-head-cog-outline</v-icon>
+      </v-btn>
+    </v-speed-dial>
+    </v-footer>
+
 
     <v-bottom-navigation app background-color="primary" color="secondary" grow>
+
       <v-btn value="plantes">
         <span>Plantes</span>
 
@@ -73,4 +81,5 @@ export default {
 .v-speed-dial {
   position: absolute;
 }
+
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>test 2</h1>
+    <h1>test 3</h1>
     <v-container>
       <v-row>
         <v-col>
@@ -78,7 +78,5 @@ export default {
 }
 </script>
 <style>
-.custom-boder {
-  border: solid;
-}
+
 </style>
