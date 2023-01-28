@@ -1,6 +1,6 @@
 <template>
 <div>
-  <h1>Affiche de la carte</h1>
+
   <my-maps></my-maps>
 </div>
 </template>

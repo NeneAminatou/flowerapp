@@ -4,12 +4,15 @@
     <v-container>
       <v-row>
         <v-col>
+          <v-card max-height="200">
+            <v-btn @click="generate">Generate ramdom flower position</v-btn>
 
-    <v-btn @click="generate">Generate ramdom flower position</v-btn>
+            <GmapMap style=" height: 200px;" :zoom="15" :center="center" ref="map">
+              <GmapMarker v-for="(marker, index) in markers" :key="index" :position="marker.latLng" />
+            </GmapMap>
+          </v-card>
 
-<GmapMap style=" height: 250px;" :zoom="15" :center="center"  ref="map">
-  <GmapMarker v-for="(marker, index) in markers" :key="index" :position="marker.latLng" />
-</GmapMap>
+
 
         </v-col>
       </v-row>
@@ -20,25 +23,25 @@
 
 <script>
 export default {
-  props:{
-    center:{
-      type:Object,
-      default:()=>{
+  props: {
+    center: {
+      type: Object,
+      default: () => {
         return { lat: 48.7587344, lng: 2.0488569 }
       }
     }
   },
   data() {
     return {
-      options:{
-        mapTypeId:'roadmap',
+      options: {
+        mapTypeId: 'roadmap',
         zoomControl: true,
-   mapTypeControl: false,
-   scaleControl: false,
-   streetViewControl: false,
-   rotateControl: false,
-   fullscreenControl: true,
-   disableDefaultUi: false
+        mapTypeControl: false,
+        scaleControl: false,
+        streetViewControl: false,
+        rotateControl: false,
+        fullscreenControl: true,
+        disableDefaultUi: false
       },
       markers: [],
       place: null,
@@ -63,7 +66,7 @@ export default {
     generate() {
       const spread = Math.random() + 0.001
 
-      this.markers =Array.from(Array(10).keys())
+      this.markers = Array.from(Array(10).keys())
         .map(m => ({
           latLng: {
             lat: this.center.lat + (Math.random() - 0.5) * spread,
@@ -74,3 +77,8 @@ export default {
   }
 }
 </script>
+<style>
+.custom-boder {
+  border: solid;
+}
+</style>
