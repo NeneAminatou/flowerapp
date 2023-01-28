@@ -1,7 +1,32 @@
 <template>
   <div>
+    <div id="create" class="text-end mb-5">
+      <v-card-text style="height: 100px; position: relative">
+        <v-speed-dial v-model="fab" :top="top" :bottom="bottom" :right="right" :left="left" :direction="direction"
+          :open-on-hover="hover" :transition="transition">
+          <template v-slot:activator>
+            <v-btn v-model="fab" color="secondary" dark fab>
+              <v-icon v-if="fab">
+                mdi-close
+              </v-icon>
+              <v-icon v-else>
+                mdi-plus
+              </v-icon>
+            </v-btn>
+          </template>
 
-    <v-bottom-navigation app background-color="primary" color="secondary" grow>
+
+
+
+          <v-btn fab dark small color="primary" >
+            <v-icon color="grey">mdi-head-cog-outline</v-icon>
+          </v-btn>
+        </v-speed-dial>
+      </v-card-text>
+
+    </div>
+
+    <v-bottom-navigation background-color="primary" color="secondary" grow>
       <v-btn value="plantes">
         <span>Plantes</span>
 
@@ -24,11 +49,27 @@
 </template>
 
 <script>
+
 export default {
+  data: () => ({
+
+    direction: 'top',
+    fab: false,
+    fling: false,
+    hover: false,
+    tabs: null,
+    top: false,
+    right: true,
+    bottom: true,
+    left: false,
+    transition: 'slide-y-reverse-transition',
+  }),
 
 }
 </script>
 
 <style>
-
+#create .v-speed-dial {
+  position: absolute;
+}
 </style>

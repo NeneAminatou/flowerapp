@@ -1,16 +1,16 @@
 <template>
   <div>
+    <!--eslint-disable-next-line-->
     <!-- <v-navigation-drawer app width="100%">
       <v-row class="fill-height" no-gutters>
 
 
       </v-row>
-    </v-navigation-drawer> -->
-    <v-navigation-drawer v-model="drawer"  absolute
-      temporary>
+    </v-navigation-drawer>  -->
+    <v-navigation-drawer v-model="drawer" absolute temporary>
       <v-list-item class="px-2">
         <v-list-item-avatar>
-       <v-icon @click="drawer=!drawer">mdi-menu</v-icon>
+          <v-icon @click="drawer = !drawer">mdi-menu</v-icon>
         </v-list-item-avatar>
       </v-list-item>
 
@@ -27,9 +27,23 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
+      <template v-slot:append>
+        <v-list dense nav>
+          <v-list-item v-for="item in bottom_items" :key="item.title">
+            <v-list-item-action>
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-item-action>
+
+            <v-list-item-content>
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
+      </template>
     </v-navigation-drawer>
+    <!--Entete de la page Barre verte-->
     <v-app-bar app color="secondary" dark>
-      <v-app-bar-nav-icon @click="drawer=!drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
 
       <v-spacer></v-spacer>
@@ -50,10 +64,19 @@
 export default {
   data() {
     return {
-      drawer:false,
+      drawer: false,
       items: [
         { title: 'Photos', icon: 'mdi-folder-multiple-image' },
         { title: 'Messagerie', icon: 'mdi-message-text' },
+      ],
+      bottom_items: [
+        {
+          title: 'Aide', icon:'mdi-help-circle-outline'
+        },
+        {
+          title: 'Paramètre', icon: 'mdi-cog'
+        },
+
       ],
       links: ['Home', 'Contacts', 'Settings'],
       mini: true,

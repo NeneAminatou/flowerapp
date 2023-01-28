@@ -9,6 +9,7 @@
 
     <!-- corps de la pagede l'application-->
     <v-main>
+      <!--quand tu cliques sur un lien par exemple /home  il te redirige vers le composant home-->
       <router-view />
     </v-main>
     <!-- fin du contenu du corps -->
