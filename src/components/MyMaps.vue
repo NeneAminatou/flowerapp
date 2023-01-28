@@ -1,11 +1,20 @@
 <template>
   <div>
 
+    <v-container>
+      <v-row>
+        <v-col>
+
     <v-btn @click="generate">Generate ramdom flower position</v-btn>
 
-    <GmapMap style="width: 600px; height: 250px;" :zoom="15" :center="center"  ref="map">
-      <GmapMarker v-for="(marker, index) in markers" :key="index" :position="marker.latLng" />
-    </GmapMap>
+<GmapMap style=" height: 250px;" :zoom="15" :center="center"  ref="map">
+  <GmapMarker v-for="(marker, index) in markers" :key="index" :position="marker.latLng" />
+</GmapMap>
+
+        </v-col>
+      </v-row>
+    </v-container>
+
   </div>
 </template>
 
