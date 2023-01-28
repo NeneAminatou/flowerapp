@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="create" class="text-end mb-5">
+    <div id="create" class="text-end mb-15">
       <v-card-text style="height: 100px; position: relative">
         <v-speed-dial v-model="fab" :top="top" :bottom="bottom" :right="right" :left="left" :direction="direction"
           :open-on-hover="hover" :transition="transition">
@@ -26,7 +26,7 @@
 
     </div>
 
-    <v-bottom-navigation background-color="primary" color="secondary" grow>
+    <v-bottom-navigation app background-color="primary" color="secondary" grow>
       <v-btn value="plantes">
         <span>Plantes</span>
 
