@@ -1,8 +1,12 @@
 <template>
   <div>
-    <div id="create" class="text-end mb-15">
+    <!-- <div id="create" class="text-end mb-15">
       <v-card-text style="height: 100px; position: relative">
-        <v-speed-dial v-model="fab" :top="top" :bottom="bottom" :right="right" :left="left" :direction="direction"
+
+      </v-card-text>
+
+    </div> -->
+    <v-speed-dial class="mb-15" v-model="fab" :top="top" :bottom="bottom" :right="right" :left="left" :direction="direction"
           :open-on-hover="hover" :transition="transition">
           <template v-slot:activator>
             <v-btn v-model="fab" color="secondary" dark fab>
@@ -22,9 +26,6 @@
             <v-icon color="grey">mdi-head-cog-outline</v-icon>
           </v-btn>
         </v-speed-dial>
-      </v-card-text>
-
-    </div>
 
     <v-bottom-navigation app background-color="primary" color="secondary" grow>
       <v-btn value="plantes">
@@ -69,7 +70,7 @@ export default {
 </script>
 
 <style>
-#create .v-speed-dial {
+.v-speed-dial {
   position: absolute;
 }
 </style>
